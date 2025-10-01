@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Day 6 | My Project</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/logo.jpg" alt="Logo" width="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="myProject.html">My Project</a>
+                    </li>
+                </ul>
+                <a href="contact.html" type="button" class="btn-contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card border-0 shadow mx-auto p-5" style="max-width: 1100px;">
+            <h1 class="mb-4">Add Project</h1>
+            <form id="projectForm">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Project Name</label>
+                    <input type="text" class="form-control" id="projectName" placeholder="Membuat aplikasi ..." required>
+                </div>
+                <div class="mb-3 d-flex gap-2">
+                    <div class="w-50">
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" placeholder="name@example.com" required>
+                    </div>
+                    <div class="w-50">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="endDate" placeholder="name@example.com" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Masukkan deskripsi project anda ..." required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="checkList" class="form-label">Technologies</label>
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="nodejs"
+                                    value='<i class="fa-brands fa-node-js"></i>'>
+                                <label class="form-check-label" for="nodejs">Node JS</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="reactjs"
+                                    value='<i class="fa-brands fa-react"></i>'>
+                                <label class="form-check-label" for="reactjs">React JS</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="bootstrap"
+                                    value='<i class="fa-brands fa-bootstrap"></i>'>
+                                <label class="form-check-label" for="bootstrap">Bootstrap</label>
+                            </div>
+                        </div>
+                        <!-- <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="ts">
+                                <label class="form-check-label" for="ts">TypeScript</label>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Upload Image</label>
+                    <input class="form-control" type="file" id="formFile" accept=".jpg, .jpeg, .png" required>
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary rounded-pill px-5">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="text-center mb-4">
+            <h1 class="mb-4">My Projects</h1>
+        </div>
+        <div id="card-container"
+            class="card border-0 shadow mx-auto p-5 flex-row flex-wrap gap-4 justify-content-between"
+            style="max-width: 1100px;">
+            <!-- akan memasukan card disini -->
+        </div>
+    </div>
+
+
+    <script src="./assets/scripts/index.js"></script>
+</body>
+
+</html>
