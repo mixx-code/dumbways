@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Detail Project</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/images/logo.jpg" alt="Logo" width="40" class="d-inline-block">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/myProject">My Project</a>
+                    </li>
+                </ul>
+                <a href="/contact" type="button" class="btn-contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <div class="mb-4 fs-5">
+            <a class="link-underline link-underline-opacity-0 text-secondary-emphasis" href="/myProject">
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+            </a>
+        </div>
+        <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-6">
+                <img id="imageProject" src="{{projectView.imageUrl}}" alt="Project preview" class="img-fluid rounded-3 shadow-sm w-100">
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="mb-4 text-center text-md-start">
+                    <h1 id="title"> {{ projectView.project_name }} </h1>
+                    <h2 class="h4 mb-2 fs-4">Duration</h2>
+                    <p id="tgl" class="mb-1  fs-5"><i class="fa-solid fa-calendar-days"></i> {{projectView.startDate}} - {{projectView.endDate}}</p>
+                    <p id="durasi" class="mb-0 text-muted fs-5"><i class="fa-solid fa-clock"></i> {{ projectView.durasi }}</p>
+                </div>
+                <div class="text-center text-md-start">
+                    <h2 class="h4 mb-3 fs-4">Technologies</h2>
+                    <div id="containerTech" class="row g-2 justify-content-center justify-content-md-start fs-5">
+                        {{#if projectView.techs.length}}
+                        {{#each projectView.techs}}
+                            <div class="col-6">
+                            <div class="badge bg-light text-dark border px-3 py-2 w-100">
+                                {{{this}}}
+                            </div>
+                            </div>
+                        {{/each}}
+                        {{else}}
+                        <p class="text-muted fs-6">No technologies selected</p>
+                        {{/if}}
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pb-5">
+        <div>
+            <h2 class="h4 mb-4 fs-4">Description</h2>
+            <p id="desk" class="fs-6 text-justify"> {{ projectView.description }} </p>
+
+    </div>
+</body>
+</html>
